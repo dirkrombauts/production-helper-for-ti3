@@ -5,6 +5,8 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
 {
     using NFluent;
 
+    using TechTalk.SpecFlow.Configuration;
+
     [Binding]
     public class Bindings
     {
@@ -14,10 +16,19 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
 
         private Technology technology;
 
+        private ProductionRun productionRun;
+
         [When(@"I produce '(.*)' '(.*)'")]
         public void WhenIProduce(int numberOfUnits, string nameOfUnits)
         {
-            ScenarioContext.Current.Pending();
+            var unit = new Unit(nameOfUnits);
+
+            if (this.productionRun == null)
+            {
+                this.productionRun = new ProductionRun(this.technology);
+            }
+
+            this.productionRun.Produce(numberOfUnits, unit);
         }
 
         [Given(@"I have the '(.*)' Technology")]
@@ -31,7 +42,7 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
         [Then(@"I have to pay '(.*)' resource\(s\)")]
         public void ThenIHaveToPayResources(int numberOfResources)
         {
-            ScenarioContext.Current.Pending();
+            Check.That(this.productionRun.Cost).IsEqualTo(numberOfResources);
         }
 
         [Given(@"my Race is the '(.*)'")]
