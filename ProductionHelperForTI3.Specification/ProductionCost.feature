@@ -77,4 +77,13 @@ One of the racial abilities of the L1z1x Mindnet is that they pay one less resou
     When I produce '1' 'Dreadnought'
     Then I have to pay '4' resources
 
+Scenario: The L1z1x Mindnet pays only 3 resources for a Dreadnought if they have Sarween Tools
+One of the racial abilities of the L1z1x Mindnet is that they pay one less resource for a Dreadnought.
+The Sarween Tools Technology provides a discount of one resource
+
+    Given my Race is the 'L1z1x Mindnet'
+    And I have the 'Sarween Tools' Technology
+    When I produce '1' 'Dreadnought'
+    Then I have to pay '3' resources
+
 # Todo: Scenario Outline: Production Costs of Flagships

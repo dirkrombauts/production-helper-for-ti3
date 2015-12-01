@@ -188,6 +188,27 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("The L1z1x Mindnet pays only 3 resources for a Dreadnought if they have Sarween To" +
+            "ols")]
+        public virtual void TheL1Z1XMindnetPaysOnly3ResourcesForADreadnoughtIfTheyHaveSarweenTools()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The L1z1x Mindnet pays only 3 resources for a Dreadnought if they have Sarween To" +
+                    "ols", ((string[])(null)));
+#line 80
+this.ScenarioSetup(scenarioInfo);
+#line 84
+    testRunner.Given("my Race is the \'L1z1x Mindnet\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 85
+    testRunner.And("I have the \'Sarween Tools\' Technology", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+    testRunner.When("I produce \'1\' \'Dreadnought\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 87
+    testRunner.Then("I have to pay \'3\' resources", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
