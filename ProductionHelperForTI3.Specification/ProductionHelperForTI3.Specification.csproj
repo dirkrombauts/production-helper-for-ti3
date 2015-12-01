@@ -53,6 +53,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BuildLimit.feature</DependentUpon>
     </Compile>
+    <Compile Include="ProductionCost.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductionCost.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +66,10 @@
     <None Include="BuildLimit.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BuildLimit.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ProductionCost.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProductionCost.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
