@@ -6,19 +6,19 @@ namespace ProductionHelperForTI3.Domain
     {
         private readonly Planet planet;
 
-        private readonly Technology enviroCompensator;
+        private readonly bool hasEnviroCompensator;
 
         public SpaceDock(Planet planet, Technology technology)
         {
             this.planet = planet;
-            this.enviroCompensator = technology == Technologies.EnviroCompensator ? technology : null;
+            this.hasEnviroCompensator = technology == Technologies.EnviroCompensator;
         }
 
         public int BuildLimit
         {
             get
             {
-                return this.planet.ResourceValue + 2 + (this.enviroCompensator != null ? 1 : 0);
+                return this.planet.ResourceValue + 2 + (this.hasEnviroCompensator ? 1 : 0);
             }
         }
     }
