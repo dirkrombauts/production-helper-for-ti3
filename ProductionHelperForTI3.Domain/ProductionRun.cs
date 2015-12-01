@@ -6,14 +6,11 @@ namespace ProductionHelperForTI3.Domain
     {
         private readonly Race race;
 
-        private Technology technology;
-
         public ProductionRun(Technology technology, Race race)
         {
             this.race = race;
-            this.technology = technology == Technologies.SarweenTools ? technology : null;
 
-            this.Cost = -(this.technology != null ? 1 : 0);
+            this.Cost = -(technology == Technologies.SarweenTools ? 1 : 0);
         }
 
         public int Cost { get; set; }
