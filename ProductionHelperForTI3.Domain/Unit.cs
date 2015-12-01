@@ -74,14 +74,6 @@ namespace ProductionHelperForTI3.Domain
                         break;
                     }
 
-                case "Dreadnought":
-                case "Dreadnoughts":
-                    {
-                        this.Name = "Dreadnought";
-                        this.Cost = 5;
-                        break;
-                    }
-
                 case "War Sun":
                 case "War Suns":
                     {
@@ -92,10 +84,27 @@ namespace ProductionHelperForTI3.Domain
             }
         }
 
+        public Unit(string name, int cost)
+            : this(name, cost, 1)
+        {
+        }
+
+        public Unit(string name, int cost, int numberOfUnits)
+        {
+            this.Name = name;
+            this.Cost = cost;
+            this.NumberOfUnitsForCost = numberOfUnits;
+        }
+
         public int Cost { get; }
 
         public string Name { get; }
 
         public int NumberOfUnitsForCost { get; }
+    }
+
+    public static class Units
+    {
+        public static Unit Dreadnought = new Unit("Dreadnought", 5);
     }
 }

@@ -21,7 +21,7 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
         [When(@"I produce '(.*)' '(.*)'")]
         public void WhenIProduce(int numberOfUnits, string nameOfUnits)
         {
-            var unit = new Unit(nameOfUnits);
+            var unit = CreateUnit(nameOfUnits);
 
             if (this.productionRun == null)
             {
@@ -29,6 +29,20 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
             }
 
             this.productionRun.Produce(numberOfUnits, unit);
+        }
+
+        private static Unit CreateUnit(string nameOfUnits)
+        {
+            switch (nameOfUnits)
+            {
+                case "Dreadnought":
+                case "Dreadnoughts":
+                    {
+                        return Units.Dreadnought;
+                    }
+            }
+
+            return new Unit(nameOfUnits);
         }
 
         [Given(@"I have the '(.*)' Technology")]
