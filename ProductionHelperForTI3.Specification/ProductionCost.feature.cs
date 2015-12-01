@@ -32,8 +32,8 @@ namespace ProductionHelperForTI3.Specification
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Production Cost", "  In order not to produce more units than I can afford\n  I want to see how much t" +
-                    "he units I am building cost", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Production Cost", "  In order not to produce more units than I can afford\r\n  I want to see how much " +
+                    "the units I am building cost", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
