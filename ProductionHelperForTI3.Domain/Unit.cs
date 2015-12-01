@@ -6,6 +6,8 @@ namespace ProductionHelperForTI3.Domain
     {
         public Unit(string name)
         {
+            this.NumberOfUnitsForCost = 1;
+
             switch (name)
             {
                 case "Ground Forces":
@@ -13,6 +15,7 @@ namespace ProductionHelperForTI3.Domain
                     {
                         this.Name = "Ground Force";
                         this.Cost = 1;
+                        this.NumberOfUnitsForCost = 2;
                         break;
                     }
 
@@ -44,6 +47,7 @@ namespace ProductionHelperForTI3.Domain
                     {
                         this.Name = "Fighter";
                         this.Cost = 1;
+                        this.NumberOfUnitsForCost = 2;
                         break;
                     }
 
@@ -91,5 +95,7 @@ namespace ProductionHelperForTI3.Domain
         public int Cost { get; }
 
         public string Name { get; }
+
+        public int NumberOfUnitsForCost { get; }
     }
 }

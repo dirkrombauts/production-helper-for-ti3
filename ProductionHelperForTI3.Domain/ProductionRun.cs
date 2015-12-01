@@ -22,9 +22,9 @@ namespace ProductionHelperForTI3.Domain
         {
             var cost = (unit.Cost * numberOfUnits);
 
-            if (unit.Name == "Ground Force" || unit.Name == "Fighter")
+            if (unit.NumberOfUnitsForCost != 1)
             {
-                cost = (cost / 2) + (cost % 2);
+                cost = (cost / unit.NumberOfUnitsForCost) + (cost % unit.NumberOfUnitsForCost);
             }
 
             if (unit.Name == "Dreadnought" && this.race?.Name == "L1z1x Mindnet")
