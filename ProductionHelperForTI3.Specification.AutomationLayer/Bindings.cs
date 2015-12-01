@@ -19,10 +19,8 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
         private Race race;
 
         [When(@"I produce '(.*)' '(.*)'")]
-        public void WhenIProduce(int numberOfUnits, string nameOfUnits)
+        public void WhenIProduce(int numberOfUnits, Unit unit)
         {
-            var unit = CreateUnit(nameOfUnits);
-
             if (this.productionRun == null)
             {
                 this.productionRun = new ProductionRun(this.technology, this.race);
@@ -31,7 +29,8 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
             this.productionRun.Produce(numberOfUnits, unit);
         }
 
-        private static Unit CreateUnit(string nameOfUnits)
+        [StepArgumentTransformation]
+        public Unit CreateUnit(string nameOfUnits)
         {
             switch (nameOfUnits)
             {
