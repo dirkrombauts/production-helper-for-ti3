@@ -72,6 +72,12 @@
       <LastGenOutput>ProductionCost.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProductionHelperForTI3.Specification.AutomationLayer\ProductionHelperForTI3.Specification.AutomationLayer.csproj">
+      <Project>{4d6c23e3-d62b-48ed-869f-46fe73d236df}</Project>
+      <Name>ProductionHelperForTI3.Specification.AutomationLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
