@@ -30,5 +30,23 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
         {
             ScenarioContext.Current.Pending();
         }
+
+        [Given(@"I have a planet with Resource Value '(.*)'")]
+        public void GivenIHaveAPlanetWithResourceValue(int resourceValue)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [When(@"I produce units at the space dock of that planet")]
+        public void WhenIProduceUnitsAtTheSpaceDockOfThatPlanet()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"the build limit is '(.*)'")]
+        public void ThenTheBuildLimitIs(int expecdtedBuildLimit)
+        {
+            ScenarioContext.Current.Pending();
+        }
     }
 }
