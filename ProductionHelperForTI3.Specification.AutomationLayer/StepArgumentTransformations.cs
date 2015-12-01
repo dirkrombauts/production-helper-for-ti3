@@ -92,5 +92,16 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
 
             return new Technology(technology);
         }
+
+        [StepArgumentTransformation]
+        public Race ToRace(string nameOfRace)
+        {
+            if (nameOfRace == "L1z1x Mindnet")
+            {
+                return Races.L1z1xMindnet;
+            }
+
+            return new Race(nameOfRace);
+        }
     }
 }

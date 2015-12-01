@@ -24,7 +24,7 @@ namespace ProductionHelperForTI3.Domain
                 cost = (cost / unit.NumberOfUnitsForCost) + (cost % unit.NumberOfUnitsForCost);
             }
 
-            if (unit == Units.Dreadnought && this.race?.Name == "L1z1x Mindnet")
+            if (unit == Units.Dreadnought && this.race == Races.L1z1xMindnet)
             {
                 cost = 4 * numberOfUnits;
             }

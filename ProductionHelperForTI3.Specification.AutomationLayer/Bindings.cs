@@ -43,9 +43,9 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
         }
 
         [Given(@"my Race is the '(.*)'")]
-        public void GivenMyRaceIsThe(string nameOfRace)
+        public void GivenMyRaceIsThe(Race race)
         {
-            this.race = new Race(nameOfRace);
+            this.race = race;
         }
 
         [Given(@"I have a planet with Resource Value '(.*)'")]
