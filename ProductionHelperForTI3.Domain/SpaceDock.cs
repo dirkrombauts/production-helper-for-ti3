@@ -1,7 +1,6 @@
 ﻿using System;
-using ProductionHelperForTI3.Domain;
 
-namespace ProductionHelperForTI3.Specification
+namespace ProductionHelperForTI3.Domain
 {
     public class SpaceDock
     {
