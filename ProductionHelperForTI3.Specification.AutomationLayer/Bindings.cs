@@ -5,8 +5,6 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
 {
     using NFluent;
 
-    using TechTalk.SpecFlow.Configuration;
-
     [Binding]
     public class Bindings
     {
