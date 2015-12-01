@@ -18,6 +18,8 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
 
         private ProductionRun productionRun;
 
+        private Race race;
+
         [When(@"I produce '(.*)' '(.*)'")]
         public void WhenIProduce(int numberOfUnits, string nameOfUnits)
         {
@@ -25,7 +27,7 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
 
             if (this.productionRun == null)
             {
-                this.productionRun = new ProductionRun(this.technology);
+                this.productionRun = new ProductionRun(this.technology, this.race);
             }
 
             this.productionRun.Produce(numberOfUnits, unit);
@@ -48,7 +50,7 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
         [Given(@"my Race is the '(.*)'")]
         public void GivenMyRaceIsThe(string nameOfRace)
         {
-            ScenarioContext.Current.Pending();
+            this.race = new Race(nameOfRace);
         }
 
         [Given(@"I have a planet with Resource Value '(.*)'")]

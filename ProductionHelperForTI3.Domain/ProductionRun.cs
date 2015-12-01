@@ -4,10 +4,13 @@ namespace ProductionHelperForTI3.Domain
 {
     public class ProductionRun
     {
+        private readonly Race race;
+
         private Technology technology;
 
-        public ProductionRun(Technology technology)
+        public ProductionRun(Technology technology, Race race)
         {
+            this.race = race;
             this.technology = technology?.Name == "Sarween Tools" ? technology : null;
 
             this.Cost = -(this.technology != null ? 1 : 0);
@@ -22,6 +25,11 @@ namespace ProductionHelperForTI3.Domain
             if (unit.Name == "Ground Force" || unit.Name == "Fighter")
             {
                 cost = (cost / 2) + (cost % 2);
+            }
+
+            if (unit.Name == "Dreadnought" && this.race?.Name == "L1z1x Mindnet")
+            {
+                cost = 4 * numberOfUnits;
             }
 
             this.Cost += cost;
