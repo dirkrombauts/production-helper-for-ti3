@@ -8,5 +8,6 @@ namespace ProductionHelperForTI3.Domain
 {
     public class Planet
     {
+        public int ResourceValue { get; set; }
     }
 }

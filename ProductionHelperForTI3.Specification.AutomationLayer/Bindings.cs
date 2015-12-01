@@ -1,10 +1,19 @@
 ﻿using TechTalk.SpecFlow;
+using ProductionHelperForTI3.Domain;
 
 namespace ProductionHelperForTI3.Specification.AutomationLayer
 {
+    using NFluent;
+
     [Binding]
     public class Bindings
     {
+        private Planet planet;
+
+        private SpaceDock spaceDock;
+
+        private Technology technology;
+
         [When(@"I produce '(.*)' '(.*)'")]
         public void WhenIProduce(int numberOfUnits, string nameOfUnits)
         {
@@ -14,7 +23,7 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
         [Given(@"I have the '(.*)' Technology")]
         public void GivenIHaveTheTechnology(string technology)
         {
-            ScenarioContext.Current.Pending();
+            this.technology = new Technology(technology);
         }
 
         [Then(@"I have to pay '(.*)' resource")]
@@ -34,19 +43,19 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
         [Given(@"I have a planet with Resource Value '(.*)'")]
         public void GivenIHaveAPlanetWithResourceValue(int resourceValue)
         {
-            ScenarioContext.Current.Pending();
+            this.planet = new Planet { ResourceValue = resourceValue };
         }
 
         [When(@"I produce units at the space dock of that planet")]
         public void WhenIProduceUnitsAtTheSpaceDockOfThatPlanet()
         {
-            ScenarioContext.Current.Pending();
+            this.spaceDock = new SpaceDock(this.planet, this.technology);
         }
 
         [Then(@"the build limit is '(.*)'")]
-        public void ThenTheBuildLimitIs(int expecdtedBuildLimit)
+        public void ThenTheBuildLimitIs(int expectedBuildLimit)
         {
-            ScenarioContext.Current.Pending();
+            Check.That(this.spaceDock.BuildLimit).IsEqualTo(expectedBuildLimit);
         }
     }
 }
