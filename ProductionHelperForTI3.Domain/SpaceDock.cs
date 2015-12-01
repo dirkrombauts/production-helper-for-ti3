@@ -3,7 +3,6 @@ using ProductionHelperForTI3.Domain;
 
 namespace ProductionHelperForTI3.Specification
 {
-
     public class SpaceDock
     {
         private readonly Planet planet;
@@ -13,7 +12,7 @@ namespace ProductionHelperForTI3.Specification
         public SpaceDock(Planet planet, Technology technology)
         {
             this.planet = planet;
-            this.enviroCompensator = technology?.Name == "Enviro Compensator" ? technology : null;
+            this.enviroCompensator = technology == Technologies.EnviroCompensator ? technology : null;
         }
 
         public int BuildLimit

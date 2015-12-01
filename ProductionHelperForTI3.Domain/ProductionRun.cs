@@ -11,7 +11,7 @@ namespace ProductionHelperForTI3.Domain
         public ProductionRun(Technology technology, Race race)
         {
             this.race = race;
-            this.technology = technology?.Name == "Sarween Tools" ? technology : null;
+            this.technology = technology == Technologies.SarweenTools ? technology : null;
 
             this.Cost = -(this.technology != null ? 1 : 0);
         }

@@ -29,9 +29,9 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
         }
 
         [Given(@"I have the '(.*)' Technology")]
-        public void GivenIHaveTheTechnology(string technology)
+        public void GivenIHaveTheTechnology(Technology technology)
         {
-            this.technology = new Technology(technology);
+            this.technology = technology;
         }
 
         [Then(@"I have to pay '(.*)' resource")]

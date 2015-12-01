@@ -76,5 +76,21 @@ namespace ProductionHelperForTI3.Specification.AutomationLayer
                     }
             }
         }
+
+        [StepArgumentTransformation]
+        public Technology ToTechnology(string technology)
+        {
+            if (technology == "Sarween Tools")
+            {
+                return Technologies.SarweenTools;
+            }
+
+            if (technology == "Enviro Compensator")
+            {
+                return Technologies.EnviroCompensator;
+            }
+
+            return new Technology(technology);
+        }
     }
 }
