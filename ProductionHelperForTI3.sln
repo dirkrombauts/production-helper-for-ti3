@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductionHelperForTI3.Spec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductionHelperForTI3.Specification.AutomationLayer", "ProductionHelperForTI3.Specification.AutomationLayer\ProductionHelperForTI3.Specification.AutomationLayer.csproj", "{4D6C23E3-D62B-48ED-869F-46FE73D236DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductionHelperForTI3.Domain", "ProductionHelperForTI3.Domain\ProductionHelperForTI3.Domain.csproj", "{B650225E-A7AD-4440-AEA3-459788D15DA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4D6C23E3-D62B-48ED-869F-46FE73D236DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D6C23E3-D62B-48ED-869F-46FE73D236DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D6C23E3-D62B-48ED-869F-46FE73D236DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B650225E-A7AD-4440-AEA3-459788D15DA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B650225E-A7AD-4440-AEA3-459788D15DA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B650225E-A7AD-4440-AEA3-459788D15DA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B650225E-A7AD-4440-AEA3-459788D15DA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
